@@ -65,37 +65,26 @@ public class Bot extends TelegramLongPollingBot {
         if (systemMessage != null && systemMessage.hasText()) {
             switch (systemMessage.getText()) {
                 case "/start":
-                    sendMsg(systemMessage, "Привет!\uD83D\uDD90\n" +
-                            "Мы туристическое агенство Vilkovo Kilimbey.\n" +
-                            "С нами всегда весело, интересно, комфортно и безопасно.");
+                    sendMsg(systemMessage, Commands.greeting);
                     break;
                 case "/Help":
-                    sendMsg(systemMessage, "С помощью нашего бота вы можете выбрать\n" +
-                                                "интересующий вас отдых и оставить свои данные\n" +
-                                                "для того что бы менеджер связался с вами для дальнейшего бронирования! ");
+                    sendMsg(systemMessage, Commands.helpText);
                     break;
                 case "/Contacts":
-                    sendMsg(systemMessage, "Украина, г. Вилково, ул. Белгородский канал 2\n " + "+38 095 538 69 59\n " + "+38 097 815 20 85");
+                    sendMsg(systemMessage, Commands.contactsText);
                     break;
                 case "/Services":
-                    sendMsg(systemMessage, "1. Фото охота\uD83E\uDD86\n" +
-                            "2. Рыбалка\uD83D\uDC1F\n" +
-                            "3. Прогулки по городу\uD83C\uDFE1\n" +
-                            "4. Прогулки на каяках\uD83D\uDEF6\n" +
-                            "5. Экскурсия на 0-км\uD83D\uDEA4\n" +
-                            "6. Экскурсия в Солёный Кут\uD83D\uDEA4\n" +
-                            "7. Кемпинг\uD83C\uDF32\n" +
-                            "8. Отдых на островах\uD83C\uDF8D");
-                    sendMsg(systemMessage,"Сделайте выбор и введите номер который вас интересующей");
+                    sendMsg(systemMessage, Commands.servicesOfferText);
+                    sendMsg(systemMessage, Commands.servicesText);
                     break;
                 case "/Weather":
-                    sendMsg(systemMessage, "Для того что бы узнать погоду, введите интиресующий вас город!");
+                    sendMsg(systemMessage, Commands.weatherText);
                     break;
                 default:
                     try {
                         sendMsg(systemMessage, Weather.getWeather(systemMessage.getText(), model));
                     } catch (IOException e) {
-                        sendMsg(systemMessage, "Город не найден!");
+                        sendMsg(systemMessage, Commands.weatherErrorText);
                     }
             }
         }
