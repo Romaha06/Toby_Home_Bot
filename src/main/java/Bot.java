@@ -77,6 +77,30 @@ public class Bot extends TelegramLongPollingBot {
                     sendMsg(systemMessage, Commands.servicesOfferText);
                     sendMsg(systemMessage, Commands.servicesText);
                     break;
+                case "1":
+                    sendMsg(systemMessage, Commands.photoHunt);
+                    break;
+                case "2":
+                    sendMsg(systemMessage, Commands.fishing);
+                    break;
+                case "3":
+                    sendMsg(systemMessage, Commands.walkingAroundTheCity);
+                    break;
+                case "4":
+                    sendMsg(systemMessage, Commands.kayaking);
+                    break;
+                case "5":
+                    sendMsg(systemMessage, Commands.excursionToZeroKm);
+                    break;
+                case "6":
+                    sendMsg(systemMessage, Commands.excursionToSaltyKut);
+                    break;
+                case "7":
+                    sendMsg(systemMessage, Commands.camping);
+                    break;
+                case "8":
+                    sendMsg(systemMessage, Commands.holidaysOnIslands);
+                    break;
                 case "/Weather":
                     sendMsg(systemMessage, Commands.weatherText);
                     break;
